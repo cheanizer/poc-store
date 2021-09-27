@@ -1,5 +1,5 @@
-## POC case study BE Enginier 
-# Explanation :
+# POC case study BE Enginier 
+### Explanation :
 
 From the fact, we can get a conclusion there is some process that use same resource in the same time. in high traffic transaction, there is some problem called race condition.
 race condition can happen in database level or even in memory level. the fact misreported inventory quantities explain the existing order management system cannot handle that problem. 
@@ -21,6 +21,10 @@ $ docker-compose up -d
 
 Setup Project : 
 $ docker exec poc ./setup.sh 
+
+
+Command demontrtion prevent incidents
+$ docker exec poc ./incidents 
 
 Url : 
 http://localhost:8080
