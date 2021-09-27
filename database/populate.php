@@ -1,4 +1,5 @@
 <?php
+(PHP_SAPI !== 'cli' || isset($_SERVER['HTTP_USER_AGENT'])) && die('cli only');
 use Faker\Factory;
 require_once 'bootsrap.php';
 use NilPortugues\Sql\QueryBuilder\Builder\GenericBuilder;
@@ -36,6 +37,8 @@ Class Populator
             $this->conn->prepare($sql)->execute($this->genericBuilder->getValues());
         }
     }
+
+    
 }
 
 $populator = new Populator($conn);

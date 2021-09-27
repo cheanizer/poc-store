@@ -30,7 +30,6 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbName", $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
   } catch(PDOException $e) {
     
   }
