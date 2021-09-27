@@ -1,0 +1,18 @@
+{
+    "name": "cheanizer/poc",
+    "description": "POC Race Condition Theory Using Flock",
+    "autoload": {
+        "psr-4": {
+            "Cheanizer\\Poc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adhi Setyawan",
+            "email": "stw.adhi@gmail.com"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}
