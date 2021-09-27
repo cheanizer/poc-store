@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    
+    //testing route
     $r->addRoute('GET', '/test', Testing::class . '/test' );
 });
 

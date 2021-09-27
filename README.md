@@ -7,3 +7,16 @@ what happened is when a checkout request comming from shoping chart (by user act
 
 Solution :
 From explanation above, system keed to know the process are finish or not, usualy we are using flag to lock and unlock. it can prevent same process from another request run simultaneously that fire race condition. as long we are using PHP. there is not much option to lock the process. usualy we using flock to create exclusive lock and blocking wait until obtained.
+
+POC
+stack : 
+PHP - Ngix - Mysql
+
+Requirement : 
+docker 
+
+Run :
+$ docker-compose up -d
+
+Url : 
+http://localhost:8080

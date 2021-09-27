@@ -13,6 +13,13 @@
         }
     ],
     "require": {
-        "nikic/fast-route": "^1.3"
+        "nikic/fast-route": "^1.3",
+        "league/fractal": "^0.19.2",
+        "doctrine/orm": "*",
+        "fzaninotto/faker": "^1.9",
+        "doctrine/cache" : "*",
+        "symfony/cache" : "*",
+        "nilportugues/sql-query-builder": "^1.8",
+        "vlucas/phpdotenv": "^5.3"
     }
 }
