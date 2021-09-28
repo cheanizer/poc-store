@@ -22,7 +22,6 @@ $ docker-compose up -d
 Setup Project : 
 $ docker exec poc ./setup.sh 
 
-
 Command demontrtion prevent incidents
 $ docker exec poc ./incidents 
 

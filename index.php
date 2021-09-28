@@ -1,8 +1,10 @@
 <?php
 
 use Cheanizer\Poc\Controllers\Testing;
+use Cheanizer\Poc\Controllers\Auth;
 
 require 'vendor/autoload.php';
+require 'bootsrap.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -11,6 +13,12 @@ error_reporting(E_ALL);
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     //testing route
     $r->addRoute('GET', '/test', Testing::class . '/test' );
+    //get authentication
+    $r->addRoute('POST','/auth/login',Auth::class . '/login');
+    //checkout cart
+
+
+    
 });
 
 // Fetch method and URI from somewhere
@@ -36,6 +44,8 @@ switch ($routeInfo[0]) {
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
         list($class, $method) = explode("/", $handler, 2);
-        call_user_func_array(array(new $class, $method), $vars);
+        $class = new $class;
+        $class->setConnection($conn);
+        call_user_func_array(array($class, $method), $vars);
         break;
 }
