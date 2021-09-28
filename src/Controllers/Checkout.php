@@ -9,7 +9,9 @@ use NilPortugues\Sql\QueryBuilder\Builder\MySqlBuilder;
 class Checkout extends Controller
 {
     use Authentication;
-
+    /**
+     * checkout process without flock 
+     */
     public function checkout()
     {
         //get user login
@@ -60,12 +62,15 @@ class Checkout extends Controller
                         'stock' => $stock
                     ])
                     ->where()
-                    ->equals('id',$product['id']);
+                    ->equals('id',$product['id'])->end();
                     $sql = $builder->writeFormatted($query);
                     $stm = $this->db->prepare($sql);
                     $stm->execute($builder->getValues());
                 }
             }
         }
+        $this->response(json_encode([
+            'message' => 'Success checkout'
+        ]));
     }
 }

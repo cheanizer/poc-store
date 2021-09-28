@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Randomize filling and seeder data. 
+ * Randomize filling and seediung data. 
  * 
  */
 
@@ -29,7 +29,7 @@ Class Populator
      * populate table product.
      * generate using faker to randomize result
      */
-    public function product($count = 100)
+    public function product($count = 10000)
     {
         for ($i =0;$i<$count;$i++)
         {
@@ -51,10 +51,10 @@ Class Populator
      * seed cart table
      */
 
-     public function cart($transactin = 10)
+     public function cart($transactin = 10000)
      {
          echo "populating chart";
-        for ($i=0;$i<10;$i++)
+        for ($i=0;$i<$transactin;$i++)
         {
             // select random user
             $query = "select count(*) as 'count' from users";
@@ -119,7 +119,7 @@ Class Populator
       * seed user table 
       */
 
-    public function user($count = 50)
+    public function user($count = 70)
     {
         //loop based on count
         for ($i=0;$i<$count;$i++)
