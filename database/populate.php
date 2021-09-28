@@ -29,7 +29,7 @@ Class Populator
      * populate table product.
      * generate using faker to randomize result
      */
-    public function product($count = 10000)
+    public function product($count = 1000)
     {
         for ($i =0;$i<$count;$i++)
         {
@@ -51,7 +51,7 @@ Class Populator
      * seed cart table
      */
 
-     public function cart($transactin = 10000)
+     public function cart($transactin = 1000)
      {
          echo "populating chart";
         for ($i=0;$i<$transactin;$i++)
@@ -107,7 +107,7 @@ Class Populator
                 ->setValues([
                     'product_id' => $product['id'],
                     'user_id' => $user['id'],
-                    'amount' => floor((rand(10,30) / 100) * $product['stock'])
+                    'amount' => rand(1,79) 
                 ]);
                 $sql = $this->genericBuilder->writeFormatted($insert);
                 $this->conn->prepare($sql)->execute($this->genericBuilder->getValues());

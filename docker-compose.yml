@@ -19,7 +19,17 @@ services:
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - dock-net
-
+  #python runner
+  pyrunner : 
+    image : python
+    container_name: pyrunner
+    restart: unless-stopped
+    tty: true
+    working_dir : /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    networks:
+      - dock-net
   #Nginx Service
   webserver:
     image: nginx:alpine

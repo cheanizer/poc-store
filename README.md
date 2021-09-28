@@ -23,7 +23,7 @@ Setup Project :
 $ docker exec poc ./setup.sh 
 
 Command demontrtion prevent incidents
-$ docker exec poc ./incidents 
+$ docker exec pyrunner python3 testcase.py
 
 Url : 
 http://localhost:8080
