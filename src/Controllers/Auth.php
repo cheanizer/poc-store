@@ -42,8 +42,8 @@ class Auth extends Controller
 
         $access_token = JWT::encode($payload, $_ENV['ACCESS_TOKEN_SECRET']);
         $this->response(json_encode([
-        'accessToken' => $access_token,
-        'expiry' => date(DATE_ISO8601, $expired)
+            'accessToken' => $access_token,
+            'expiry' => date(DATE_ISO8601, $expired)
         ]));
     }
 }

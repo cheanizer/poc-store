@@ -2,6 +2,7 @@
 
 use Cheanizer\Poc\Controllers\Testing;
 use Cheanizer\Poc\Controllers\Auth;
+use Cheanizer\Poc\Controllers\Checkout;
 
 require 'vendor/autoload.php';
 require 'bootsrap.php';
@@ -16,9 +17,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     //get authentication
     $r->addRoute('POST','/auth/login',Auth::class . '/login');
     //checkout cart
-
-
-    
+    $r->addRoute('POST','/checkout',Checkout::class . '/checkout');
 });
 
 // Fetch method and URI from somewhere
