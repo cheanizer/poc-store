@@ -4,6 +4,7 @@ use Cheanizer\Poc\Controllers\Testing;
 use Cheanizer\Poc\Controllers\Auth;
 use Cheanizer\Poc\Controllers\Cart;
 use Cheanizer\Poc\Controllers\Checkout;
+use Cheanizer\Poc\Controllers\User;
 
 require 'vendor/autoload.php';
 require 'bootsrap.php';
@@ -17,6 +18,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/test', Testing::class . '/test' );
     //get authentication
     $r->addRoute('POST','/auth/login',Auth::class . '/login');
+    //list users
+    $r->addRoute('GET','/user',User::class . '/list');
     //list cart
     $r->addRoute('GET','/cart',Cart::class . '/list');
     //checkout cart
