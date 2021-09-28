@@ -24,12 +24,17 @@ class Auth extends Controller
         $statement = $this->db->prepare($query);
         $statement->execute([$email]);
         $user = $statement->fetch();
-
+        if (! $user)
+        {
+            http_response_code(401);
+            return false;
+        }
         // match simple sha1 
         if ($user['password'] !== sha1($password))
         {
             //respone exception 200
             echo "salah password";
+            return false;
         }
 
         // expired 
