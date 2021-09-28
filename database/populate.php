@@ -53,6 +53,7 @@ Class Populator
 
      public function cart($transactin = 10)
      {
+         echo "populating chart";
         for ($i=0;$i<10;$i++)
         {
             // select random user
@@ -141,12 +142,14 @@ Class Populator
 
 $populator = new Populator($conn);
 
+$mode = (isset ($argv[1])) ? $argv[1] : '';
+
 // populate user table
-$populator->user();
+if ($mode == 'all' || $mode == 'user') $populator->user();
 
 // populate product table
-$populator->product();
+if ($mode == 'all' || $mode == 'product') $populator->product();
 
 // populate cart 
-$populator->cart();
+if ($mode == 'all' || $mode == 'cart') $populator->cart();
 
